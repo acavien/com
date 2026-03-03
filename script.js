@@ -1,8 +1,8 @@
 const STORE = {
   name: "Acavien Nig Ltd",
   address: "Suite 2, Polaris Bank Plaza, Opposite Carpark, BBA, Trade Fair Complex",
-  phone: "08035143118",
-  whatsapp: "2348091599809",
+  phone: "08142526229",
+  whatsapp: "2348142526229",
   email: "acaviennigltd@gmail.com"
 };
 const products =[
