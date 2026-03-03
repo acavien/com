@@ -2807,6 +2807,7 @@ const state = {
   currentPage: 1,
   pageSize: 30,
   cart: new Map(),
+  cartToastTimer: null,
   heroIndex: 0,
   heroTimer: null
 };
@@ -2831,7 +2832,8 @@ const el = {
   pagination: document.getElementById("pagination"),
   prevPage: document.getElementById("prev-page"),
   nextPage: document.getElementById("next-page"),
-  pageLabel: document.getElementById("page-label")
+  pageLabel: document.getElementById("page-label"),
+  cartToast: document.getElementById("cart-toast")
 };
 function formatNaira(value) {
   return "N" + Number(value || 0).toLocaleString("en-NG");
@@ -2842,6 +2844,15 @@ function safeImageUrl(relativePath) {
   } catch {
     return relativePath;
   }
+}
+function showCartToast(message) {
+  if (!el.cartToast) return;
+  el.cartToast.textContent = message;
+  el.cartToast.classList.add("show");
+  if (state.cartToastTimer) clearTimeout(state.cartToastTimer);
+  state.cartToastTimer = setTimeout(function () {
+    el.cartToast.classList.remove("show");
+  }, 1800);
 }
 function categorize(name) {
   const n = name.toLowerCase();
@@ -3037,6 +3048,7 @@ function addToCart(id) {
     state.cart.set(id, Object.assign({}, product, { qty: 1 }));
   }
   renderCart();
+  showCartToast(product.name + " added to cart.");
 }
 function changeQty(id, action) {
   if (!state.cart.has(id)) return;
