@@ -3193,7 +3193,13 @@ const el = {
   prevPage: document.getElementById("prev-page"),
   nextPage: document.getElementById("next-page"),
   pageLabel: document.getElementById("page-label"),
-  cartToast: document.getElementById("cart-toast")
+    cartToast: document.getElementById("cart-toast"),
+    productDetails: document.getElementById("product-details"),
+    detailsClose: document.getElementById("details-close"),
+    detailsBrand: document.getElementById("details-brand"),
+    detailsTitle: document.getElementById("details-title"),
+    detailsImage: document.getElementById("details-image"),
+    detailsDescription: document.getElementById("details-description")
 };
 function formatNaira(value) {
   return "N" + Number(value || 0).toLocaleString("en-NG");
@@ -3226,6 +3232,56 @@ function categorize(name) {
   if (/(wash|cleanser|cleansing|foam|shower|bath|intimate wash|gel cleanser)/.test(n)) return "Cleansers and Washes";
   if (/(lotion|cream|moisturiser|moisturizer|body milk|body butter|gel cream)/.test(n)) return "Lotions and Creams";
   return "Skincare Essentials";
+}
+function getProductDetails(product) {
+    const name = product.name.toLowerCase();
+    const categoryNames = {
+        "Cleansers and Washes": "Cleansers & Washes",
+        "Serums Oils and Toners": "Serums, Oils & Toners",
+        "Treatments and Exfoliants": "Treatments & Exfoliants",
+        "Lotions and Creams": "Lotions & Creams",
+        "Soaps and Bars": "Soaps & Bars"
+    };
+    const details = {
+        ingredient: "the active ingredients shown on the product image",
+        benefit: "support a simple, consistent personal-care routine"
+    };
+    const matches = [
+        [/(vitamin c|ascorbic)/, "Vitamin C", "Helps brighten the appearance of dull-looking skin and supports a more even-looking tone."],
+        [/(salicylic acid|bha)/, "Salicylic acid (BHA)", "Helps unclog pores and remove excess oil for clearer-looking skin."],
+        [/(retinol|retinyl)/, "Retinol or a retinoid derivative", "Helps improve the look of uneven texture and fine lines over time. Use sunscreen during the day."],
+        [/(niacinamide|vitamin b3)/, "Niacinamide (vitamin B3)", "Helps balance the look of oil, support the skin barrier, and improve the appearance of uneven tone."],
+        [/(ceramide)/, "Ceramides", "Helps replenish the skin barrier and reduce the feeling of dryness."],
+        [/(snail mucin|snail)/, "pure snail mucin extract", "Helps intensely hydrate and soften the feel of skin while supporting a smoother-looking complexion"],
+        [/(collagen|polypeptide|peptide)/, "Collagen, peptides, or polypeptides", "Helps moisturise and improve the look of skin that feels dry or less firm."],
+        [/(caffeine)/, "Caffeine", "Helps refresh the look of tired-looking skin and reduce the appearance of puffiness."],
+        [/(hyaluronic|hyaluron)/, "Hyaluronic acid", "Draws in moisture to help skin feel hydrated, plump, and comfortable."],
+        [/(tea tree)/, "Tea tree", "Helps refresh the skin and support a cleaner-feeling complexion."],
+        [/(glycerin)/, "Glycerin", "Helps attract and retain moisture so skin feels softer and more comfortable."]
+    ];
+    for (let i = 0; i < matches.length; i += 1) {
+        if (matches[i][0].test(name)) {
+            details.ingredient = matches[i][1];
+            details.benefit = matches[i][2]
+                .replace(/^Helps /, "help ")
+                .replace(/^Draws /, "draw ")
+                .replace(/^Adds /, "add ")
+                .replace(/^Supports /, "support ")
+                .replace(/^Helps /, "help ")
+                .replace(/^Helps /, "help ");
+            break;
+        }
+    }
+    if (product.category === "Oral Care") {
+        details.ingredient = "the active ingredients and cleansing agents shown on the product image";
+        details.benefit = "help clean teeth or freshen the mouth as part of a daily oral-care routine";
+    } else if (product.category === "Fragrance") {
+        details.ingredient = "the fragrance details shown on the product image";
+        details.benefit = "add a pleasant scent for everyday wear or use around the home";
+    }
+    const category = categoryNames[product.category] || product.category;
+    details.description = product.brand + " " + product.name + " is an authentic " + category + ". Formulated with " + details.ingredient + " to " + details.benefit.replace(/[.!?]+$/, "") + ". Guaranteed 100% genuine and directly sourced by Acavien Nigeria Limited.";
+    return details;
 }
 for (let i = 0; i < products.length; i += 1) {
   products[i].category = categorize(products[i].name);
@@ -3340,7 +3396,8 @@ function renderProducts() {
     const stockBadge = outOfStock ? "<p class=\"stock-badge\">Out of Stock</p>" : "";
     const buttonMarkup = outOfStock
       ? "<button class=\"add-btn disabled\" type=\"button\" disabled aria-disabled=\"true\">Out of Stock</button>"
-      : "<button class=\"add-btn\" data-id=\"" + p.id + "\">Add to Cart</button>";
+            : "<button class=\"add-btn\" data-action=\"add\" data-id=\"" + p.id + "\">Add to Cart</button>";
+        const detailsButton = "<button class=\"about-btn\" data-action=\"details\" data-id=\"" + p.id + "\" type=\"button\">About</button>";
     return "<article class=\"card" + (outOfStock ? " out-of-stock" : "") + "\">" +
       "<img src=\"" + encodeURI(p.image) + "\" alt=\"" + p.name + "\" loading=\"lazy\" />" +
       "<div class=\"card-body\">" +
@@ -3350,12 +3407,23 @@ function renderProducts() {
       stockBadge +
       "<div class=\"price-row\">" +
       "<span class=\"price\">" + formatNaira(p.price) + "</span>" +
-      buttonMarkup +
+            "<div class=\"card-actions\">" + detailsButton + buttonMarkup + "</div>" +
       "</div>" +
       "</div>" +
       "</article>";
   }).join("");
   renderPagination(pageData.totalPages);
+}
+function openProductDetails(id) {
+    const product = products.find(function (p) { return p.id === id; });
+    if (!product || !el.productDetails) return;
+    const details = getProductDetails(product);
+    el.detailsBrand.textContent = product.brand;
+    el.detailsTitle.textContent = product.name;
+    el.detailsImage.src = encodeURI(product.image);
+    el.detailsImage.alt = product.name;
+    el.detailsDescription.textContent = details.description;
+    el.productDetails.showModal();
 }
 function buildCategoryOptions() {
   const categories = Array.from(new Set(products.map(function (p) { return p.category; }))).sort(function (a, b) {
@@ -3481,7 +3549,17 @@ el.grid.addEventListener("click", function (e) {
   const btn = e.target.closest("button[data-id]");
   if (!btn) return;
   const id = Number(btn.dataset.id);
+    if (btn.dataset.action === "details") {
+        openProductDetails(id);
+        return;
+    }
   addToCart(id);
+});
+el.detailsClose.addEventListener("click", function () {
+    el.productDetails.close();
+});
+el.productDetails.addEventListener("click", function (e) {
+    if (e.target === el.productDetails) el.productDetails.close();
 });
 el.cartItems.addEventListener("click", function (e) {
   const btn = e.target.closest("button[data-action][data-id]");
