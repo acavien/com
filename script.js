@@ -3,7 +3,7 @@ const STORE = {
   address: "Suite 2, Polaris Bank Plaza, Opposite Carpark, BBA, Trade Fair Complex",
   phone: "08142526229",
   whatsapp: "2348142526229",
-  email: "acaviennigltd@gmail.com"
+  email: "contact@acaviennigltd.com"
 };
 const products =[
     {
@@ -138,7 +138,7 @@ const products =[
         "id":  19,
         "name":  "PDRN Elasticity Support Capsule Cream",
         "brand":  "Facefacts",
-        "price":  6000,
+        "price":  6500,
         "image":  "images/PDRN Elasticity Support Capsule Cream.webp",
         "outOfStock": false
     },
@@ -146,7 +146,7 @@ const products =[
         "id":  20,
         "name":  "PDRN Sculpting Contour Serum",
         "brand":  "Facefacts",
-        "price":  6000,
+        "price":  6500,
         "image":  "images/PDRN Sculpting Contour Serum.webp",
         "outOfStock": false
     },
@@ -154,7 +154,7 @@ const products =[
         "id":  21,
         "name":  "PDRN Smoothing Eye Serum Shot",
         "brand":  "Facefacts",
-        "price":  4000,
+        "price":  6500,
         "image":  "images/PDRN Smoothing Eye Serum Shot.webp",
         "outOfStock": false
     },
@@ -824,11 +824,11 @@ const products =[
     },
     {
         "id":  116,
-        "name":  "Shimmer Gloss Wand - Champagne Sparkle",
+        "name":  " Gloss Wand - Champagne Sparkle",
         "brand":  "Facefacts",
-        "price":  7500,
+        "price":  4500,
         "image":  "images/Shimmer Gloss Wand - Champagne Sparkle.webp",
-        "outOfStock": false
+        "outOfStock": true
 
     },
     {
@@ -1189,9 +1189,9 @@ const products =[
         "id":  167,
         "name":  "Scủủp Peach Iced Tea Cooling Body Stick",
         "brand":  "Facefacts",
-        "price":  7500,
+        "price":  4500,
         "image":  "images/Scủủp Peach Iced Tea Cooling Body Stick.webp",
-        "outOfStock": false
+        "outOfStock": true
     },
     {
         "id":  168,
