@@ -2594,30 +2594,24 @@ const products =[
         "id":  363,
         "name":  "Moisturising lip balm, aleo vera",
         "brand":  "Moisturising lip balm",
-        "price":  1200,
+        "price":  1500,
         "image":  "images/348- Moisturising lip balm, aleo vera,1200naira.jpg"
     },
     {
         "id":  364,
         "name":  "Moisturising lip balm, coconut",
         "brand":  "Moisturising lip balm",
-        "price":  1200,
+        "price":  1500,
         "image":  "images/348- Moisturising lip balm, coconut,1200naira.jpg"
     },
     {
         "id":  365,
         "name":  "Moisturising lip balm, pearl shine",
         "brand":  "Moisturising lip balm",
-        "price":  1200,
+        "price":  1500,
         "image":  "images/349- Moisturising lip balm, pearl shine,1200naira.jpg"
     },
-    {
-        "id":  366,
-        "name":  "Moisturising lip balm, original",
-        "brand":  "Moisturising lip balm",
-        "price":  1200,
-        "image":  "images/350- Moisturising lip balm, original,1200naira.jpg"
-    },
+    
     {
         "id":  367,
         "name":  "Glow on wash, anti aging herbal 7days whitening",
@@ -3156,7 +3150,228 @@ const products =[
         "brand":  "Facefacts",
         "price":  3000,
         "image":  "images/44- Facefacts, firm revitalise polypeptide serum 3000naira.jpg"
+    },
+    {
+        "id":  444,
+        "name":  "Facefact, ceramide oil control (Gift set)",
+        "brand":  "Facefacts",
+        "price":  12000,
+        "image":  "images/Facefact ceramide oil control Gift set.webp"
+    },
+    {
+        "id":  445,
+        "name":  "Facefact, Friday social spf 50 sunscreen",
+        "brand":  "Facefacts",
+        "price":  6500,
+        "image":  "images/Facefact Friday social spf 50 sunscreen.webp"
+    },
+    {
+        "id":  446,
+        "name":  "Facefact, matcha glow detox jelly cleanser",
+        "brand":  "Facefacts",
+        "price":  5000,
+        "image":  "images/Facefact matcha glow detox jelly cleanser.webp"
+    },
+    {
+        "id":  447,
+        "name":  "Facefact, matcha glow azelaic blemish serum",
+        "brand":  "Facefacts",
+        "price":  5000,
+        "image":  "images/Facefact matcha glow azelaic blemish serum.webp"
+    },
+    {
+        "id":  448,
+        "name":  "Facefact, matcha glow peptide water cream",
+        "brand":  "Facefacts",
+        "price":  5000,
+        "image":  "images/Facefact matcha glow peptide water cream.webp"
+    },
+    {
+        "id":  449,
+        "name":  "Facefact, Lip Butter SPF 50 Passion Fruit",
+        "brand":  "Facefacts",
+        "price":  3000,
+        "image":  "images/Facefact Lip Butter SPF 50, Passion Fruit.webp"
+    },
+    {
+        "id":  450,
+        "name":  "Facefact, Lip Butter SPF 50 Blush Coral",
+        "brand":  "Facefacts",
+        "price":  3000,
+        "image":  "images/Facefact, Lip Butter SPF 50 Blush Coral.webp"
+    },
+    {
+        "id":  451,
+        "name":  "Facefact, Lip Butter SPF 50 Zingy Lime",
+        "brand":  "Facefacts",
+        "price":  3000,
+        "image":  "images/Facefact, Lip Butter SPF 50 Zingy Lime.webp"
+    },
+    {
+        "id":  452,
+        "name":  "Facefact, Lip Butter SPF 50 Velvet Nude",
+        "brand":  "Facefacts",
+        "price":  3000,
+        "image":  "images/Facefact, Lip Butter SPF 50 Velvet Nude.webp"
+    },
+    {
+        "id":  453,
+        "name":  "Facefact, Lip Butter SPF 50 Red Cherry",
+        "brand":  "Facefacts",
+        "price":  3000,
+        "image":  "images/Facefact, Lip Butter SPF 50 Red Cherry.webp"
+    },
+    {
+        "id":  454,
+        "name":  "Facefact, Collagen Overnight Lip Mask",
+        "brand":  "Facefacts",
+        "price":  3000,
+        "image":  "images/Facefact, Collagen Overnight Lip Mask.webp"
+    },
+    {
+        "id":  455,
+        "name":  "Facefact, Hyaluronic Overnight Lip Mask",
+        "brand":  "Facefacts",
+        "price":  3000,
+        "image":  "images/Facefact, Hyaluronic Overnight Lip Mask.webp"
+    },
+    {
+        "id":  456,
+        "name":  "Facefact, Lip Butter SPF 50 Red Cherry",
+        "brand":  "Facefacts",
+        "price":  3000,
+        "image":  "images/Facefact, Lip Butter SPF 50 Red Cherry.webp"
+    },
+    {
+        "id":  457,
+        "name":  "Scủủp Peach Iced Tea SPF 30 Shimmer Body Stick",
+        "brand":  "Facefacts",
+        "price":  5000,
+        "image":  "images/Scủủp Peach Iced Tea SPF 30 Shimmer Body Stick.webp",
+        "outOfStock": false
+    },
+    {
+        "id":  458,
+        "name":  "Shimmer Gloss Wand - Champagne Sparkle",
+        "brand":  "Facefacts",
+        "price":  2500,
+        "image":  "images/Shimmer Gloss Wand - Champagne Sparkle.webp",
+        "outOfStock": false
+    },
+    {
+        "id":  459,
+        "name":  "Shimmer Gloss Wand - Twilight Berry",
+        "brand":  "Facefacts",
+        "price":  2500,
+        "image":  "images/Shimmer Gloss Wand - Twilight Berry.webp",
+        "outOfStock": false
+    },
+    {
+        "id":  460,
+        "name":  "Headshock Prolength Voluminizing Shampoo",
+        "brand":  "Headshock",
+        "price":  4500,
+        "image":  "images/Headshock prolength voluminizing shampoo.jpg",
+        "outOfStock": false
+    },
+    {
+        "id":  461,
+        "name":  "Headshock Prolength Nourishing Conditioner",
+        "brand":  "Headshock",
+        "price":  4500,
+        "image":  "images/Headshock prolength nourishing conditioner.jpg",
+        "outOfStock": false
+    },
+    {
+        "id":  462,
+        "name":  "Headshock night restored silky length sleep styling serum",
+        "brand":  "Headshock",
+        "price":  4500,
+        "image":  "images/Headshock night restored silky length sleep styling serum.webp",
+        "outOfStock": false
+    },
+    {
+        "id":  463,
+        "name":  "Headshock restored root revival overnight scalp tonic",
+        "brand":  "Headshock",
+        "price":  4500,
+        "image":  "images/Headshock restored root revival overnight scalp tonic.webp",
+        "outOfStock": false
+    },
+    {
+        "id":  464,
+        "name":  "Lip Gloss Balm, Strawberry",
+        "brand":  "Pretty",
+        "price":  2500,
+        "image":  "images/Pretty Lip Gloss Balm, Strawberry.webp",
+        "outOfStock": false
+    },
+    {
+        "id":  465,
+        "name":  "Lip Gloss Balm, Cocunut",
+        "brand":  "Pretty",
+        "price":  2500,
+        "image":  "images/Pretty Lip Gloss Balm, Cocunut.jpg",
+        "outOfStock": false
+    },
+    {
+        "id":  466,
+        "name":  "Lip Gloss Balm, Watermelon",
+        "brand":  "Pretty",
+        "price":  2500,
+        "image":  "images/Pretty Lip Gloss Balm, Watermelon.jpg",
+        "outOfStock": false
+    },
+    {
+        "id":  467,
+        "name":  "Lip Gloss Balm, Blackberry",
+        "brand":  "Pretty",
+        "price":  2500,
+        "image":  "images/Pretty Lip Gloss Balm, Blackberry.jpg",
+        "outOfStock": false
+    },
+    {
+        "id":  468,
+        "name":  "Moisturising Lip Balm, Blackberry Blast",
+        "brand":  "Pretty",
+        "price":  1500,
+        "image":  "images/Moisturising Lip Balm, Blackberry Blast.jpg",
+        "outOfStock": false
+    },
+    {
+        "id":  469,
+        "name":  "Moisturising Lip Balm, Watermelon Crush",
+        "brand":  "Pretty",
+        "price":  1500,
+        "image":  "images/Moisturising Lip Balm, Watermelon Crush.webp",
+        "outOfStock": false
+    },
+    {
+        "id":  470,
+        "name":  "Moisturising Lip Balm, Sweet Blueberry",
+        "brand":  "Pretty",
+        "price":  1500,
+        "image":  "images/Moisturising Lip Balm, Sweet Blueberry.jpg",
+        "outOfStock": false
+    },
+    {
+        "id":  471,
+        "name":  "Moisturising Lip Balm, Original",
+        "brand":  "Pretty",
+        "price":  1500,
+        "image":  "images/Moisturising Lip Balm, Original.jpg",
+        "outOfStock": false
+    },
+    {
+        "id":  472,
+        "name":  "Moisturising Lip Balm, Strawberry",
+        "brand":  "Pretty",
+        "price":  1500,
+        "image":  "images/Moisturising Lip Balm, Strawberry.jpg",
+        "outOfStock": false
     }
+    
+
     
 
 ];
