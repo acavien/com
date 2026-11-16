@@ -3071,7 +3071,7 @@ const products =[
         "id":  432,
         "name":  "Facefacts, ceramide oil control moisturizing gel cream",
         "brand":  "Facefacts",
-        "price":  3000,
+        "price":  3500,
         "image":  "images/33- Facefacts, ceramide oil control moisturizing gel cream 3000naira.jpg"
     },
     {
@@ -3369,6 +3369,13 @@ const products =[
         "price":  1500,
         "image":  "images/Moisturising Lip Balm, Strawberry.jpg",
         "outOfStock": false
+    },
+    {
+        "id":  473,
+        "name":  "Facefacts, ceramide hydrating gentle cleanser 400ml",
+        "brand":  "Facefacts",
+        "price":  6500,
+        "image":  "images/127- Facefacts, ceramide hydrating gentle cleanser 4500naira.jpg"
     }
     
 
